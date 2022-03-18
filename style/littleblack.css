@@ -1,0 +1,127 @@
+.hand {
+    width: 100%;
+    height: 40px;
+    background: rgb(12, 125, 129);
+    position: relative;
+}
+
+.hand::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 70px;
+    top: 10px;
+    right: 0px;
+    background: rgb(12, 125, 129);
+}
+
+.mouth {
+    width: 70%;
+    height: 50px;
+    background: red;
+    position: relative;
+    margin: 0px auto;
+}
+
+.mouth::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: white;
+    left: 40%;
+    margin-left: -15px;
+}
+
+.mouth::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: white;
+    right: 40%;
+    margin-left: 40px;
+}
+
+
+.eye {
+    width: 100%;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+
+}
+
+.eye>div {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    background: white;
+}
+
+.eye>div:nth-child(1)::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    left: 20px;
+    background: rgb(12, 12, 12);
+    transition: 1s all;
+}
+
+.eye>div:nth-child(2)::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    right: 20px;
+    background: rgb(12, 12, 12);
+    transition: 1s all;
+}
+
+.card:hover .eye>div:nth-child(1)::after {
+    transform: translateY(25px);
+    border-radius: 20%;
+}
+
+.card:hover .eye>div:nth-child(2)::before {
+    transform: translateY(25px);
+    border-radius: 20%;
+}
+
+.card {
+    width: 210px;
+    height: 350px;
+    background: black;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    margin-left: 20px;
+    transition: 0.5s all;
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -70px;
+    width: 400px;
+    height: 20px;
+    transform: rotateZ(20deg);
+    border-bottom: 30px solid rgba(243, 242, 242, 0.5);
+    transition: 0.5s all;
+    transform-origin: top center;
+}
+
+.card:hover {
+    transform: rotateX(10deg) translateY(-6px);
+    box-shadow: 0px 10px 20px rgb(143, 140, 140);
+}
+
+.card:hover:after {
+    width: 400px !important;
+    top: 350px;
+    right: 0px;
+}
